@@ -17,11 +17,18 @@
  * Find largest palindrome that is a product of 2 three digit numbers. 
  *
  * Solution: 
- *
  * Brute Force: Find product of 3 digits from 100 to 999 and test if the
  * result is a palindrome 
+ * 
+ * Analysis 1: A palindrome in this problem should be, generally speaking, 
+ * 6 digits in length: abccba 
+ * 100000a + 10000b + 1000c + 100c + 10b + a 
+ * = 100001a + 10010b + 1100c 
+ * = 11 x (9091a + 910b + 100c) where 1<=a<=9; 0<=b<=9; 0<=c<=9
  *
- *
+ * The search for this simplification will be much smaller than brute force 
+ * as its "only" on 900 entries 
+ * 
  * */
 #define TRUE               1
 #define FALSE              0
