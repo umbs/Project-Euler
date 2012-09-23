@@ -1,17 +1,3 @@
-/*---------------------------------------------------------------------------
- * 
- * euler.c 
- *
- *     08/08/2011 - 
- *
- *     <supadhy@sj.us.am.ericsson.se>
- *
- *     Copyright (c) 2011 RedBack Networks, Inc.
- *     All rights reserved.
- *
- *---------------------------------------------------------------------------
- */
-
 /*
 Problem:  
      2520 is the smallest number that can be divided by each of the numbers from 
