@@ -13,7 +13,17 @@
  * 2ab - 2000(a+b) + 1000000 = 0
  *
  * Other Solutions: 
+ * One property of Pythogorean Triplet: If m & n are positive integers
+ * then 2mn, m^2-n^2, m^2+n^2 form a triplet.
  *
+ * Using this rule: a + b + c = 1000 means 
+ * a = 2mn, b = m^2-n^2, c = m^2+n^2 
+ *
+ * a + b + c = 2m(m+n) = 1000 
+ * m(m+n) = 500 
+ *
+ * There are multiple solutions to above equation, but m=20 and n=5 is the
+ * solution to this problem. 
  *
  *---------------------------------------------------------------------------
  */
