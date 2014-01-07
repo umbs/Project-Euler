@@ -7,7 +7,7 @@
 long nums[LIMIT+1]; 
 
 /* Seive of Erathostheans. As per Wikipedia, run time of O(N lg(lg N)). 
- *
+ * 
  */
 void evalPrimes() 
 {
@@ -16,7 +16,7 @@ void evalPrimes()
 	for(i=1; i<=LIMIT; i++) 
 		nums[i] = i; 
         
-        for(i=2; i<=LIMIT; i++) {
+        for(i=2; i<=LIMIT; i++) {  // this loop only needs to be done up to sqrt (LIMIT)
 		if(!nums[i])
 			continue; 
 	

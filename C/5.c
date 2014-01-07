@@ -7,38 +7,25 @@ Problem:
      numbers from 1 to 20?
 */
 
-#include <math.h> 
+#include "global.h"
 
-int main(int argc, char *argv[]) 
+int _5() 
 {
     /* smallest number divisible by all number from 1-20 */
-    int N = 20, i; 
-    unsigned long long int fact = 1; 
-    unsigned long long int incr = 1, jump; 
+    int8_t N = 20, i; 
+    uint64_t fact = 1; 
+    uint64_t incr = 1, jump; 
 
     /* factorial */
-    for(i=1; i<=N; i++)
+    for(i=2; i<=N; i++)
         fact *= i; 
-
-    printf("factorial of %d: %u\n", N, fact); 
 
     /* ALL primes between 1 and 20 = 2, 3, 5, 7, 11, 13, 17, 19 */
     incr = 2 * 3 * 5 * 7 * 11 * 13 * 17 * 19; 
 
-    printf("incr: %u\n", incr); 
-
     for(jump = incr; jump <= fact; jump+= incr)
     {
-        if((jump%2 == 0) && 
-           (jump%3 == 0) && 
-           (jump%4 == 0) && 
-           (jump%5 == 0) && 
-           (jump%6 == 0) && 
-           (jump%7 == 0) && 
-           (jump%8 == 0) && 
-           (jump%9 == 0) && 
-           (jump%10 == 0) && 
-           (jump%11 == 0) && 
+        if((jump%11 == 0) && 
            (jump%12 == 0) && 
            (jump%13 == 0) && 
            (jump%14 == 0) && 
@@ -49,11 +36,10 @@ int main(int argc, char *argv[])
            (jump%19 == 0) && 
            (jump%20 == 0))
         {
-            printf("Found number: %u\n", jump); 
-
+            printf("Found number: %llu\n", jump); 
             break; 
         }
     }
 
-    return 0; 
+    return EXIT_SUCCESS; 
 }

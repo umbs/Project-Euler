@@ -1,4 +1,4 @@
-#include <stdio.h> 
+#include "global.h"  
 
 /* 
  * Find largest palindrome that is a product of 2 three digit numbers. 
@@ -17,14 +17,6 @@
  * as its "only" on 900 entries 
  * 
  * */
-#define TRUE               1
-#define FALSE              0
-
-typedef unsigned char      uint8_t;  
-typedef unsigned short     uint16_t; 
-typedef unsigned int       uint32_t; 
-typedef unsigned long long uint64_t; 
-typedef uint8_t            bool; 
 
 /* Gives number of digits in N */ 
 uint8_t numDigits(uint64_t N) 
@@ -36,20 +28,20 @@ uint8_t numDigits(uint64_t N)
     return digits; 
 }
 
-bool isPalindrome(char *strNum, uint8_t strLen) 
+int isPalindrome(char *strNum, uint8_t strLen) 
 {   
     uint8_t i; 
 
     for(i=0; i<strLen/2; i++) {
         if(strNum[i] != strNum[strLen-i-1]) 
-            return FALSE; 
+            return 0; 
     }
 
-    return TRUE; 
+    return 1; 
 }
 
-int main() 
-{   
+int _4() 
+{
     uint64_t   x, y;
     uint8_t    digits; 
     char strNum[32];

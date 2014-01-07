@@ -11,32 +11,40 @@
  *
  * */
 
-#include <stdio.h> 
+#include "global.h"  
 
-int main() 
+int isPrime(int N) 
+{
+    int i; 
+    if(N<1 || N==2 || N%2==0) return 0; 
+    
+    uint16_t m = (uint16_t) sqrt((double)N); 
+    
+    for(i=3; i<=m; i+=2) 
+        if(N%i==0)
+                return 0; 
+    
+    return 1; 
+}
+
+int _3() 
 {
     FILE *fp; 
-    unsigned int primes[10000]; 
-    unsigned int i; 
+    uint16_t sqroot; 
+    uint16_t i; 
 
-    unsigned long long N = 600851475143; 
+    uint64_t N = 600851475143;
+    sqroot = (uint16_t) sqrt((double)N); 
 
-    /* primes.txt file contains 1st 10000 primes */
-    fp = fopen("primes.txt", "r");
+    printf("sqroot: %d\n", sqroot); 
 
-    for(i=0; i<10000; i++) {
-        fscanf(fp, "%d %d", &i, &primes[i]); 
+    for(i=sqroot; i >= 3; i--) {
+            if(isPrime(i)) // largest prime found 
+            {
+                    printf("Largest Prime: %d\n", i);
+                    break; 
+            }
     }
-
-    fclose(fp); 
-
-    for(i=9999; i>0; i--) {
-        if (N%primes[i] == 0) {
-            printf("Largest prime: %u\n", primes[i]); 
-            goto done; 
-        }
-    }
-
-done: 
-    return 0; 
+    
+    return EXIT_SUCCESS; 
 }
